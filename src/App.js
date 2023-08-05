@@ -1,9 +1,13 @@
-import "./styles/App.css";
+import React from "react";
+import HomePage from "./components/HomePage/HomePage";
+import "./styles/App.scss";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <div>
+        <HomePage></HomePage>
+      </div>
     </div>
   );
 }
