@@ -1,16 +1,20 @@
 /*Оболочка футера*/
-/* .footer {
-  height: 15vh;
-  background-color: rgb(191, 52, 226);
-} */
+.footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 
+/*блок с элементами футера*/
 .footer_ul {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
   list-style: none;
   margin: 0;
-  background: rgb(7, 186, 231);
+  padding: 1vh;
+  background: rgb(191, 63, 250);
 }
 
 /*Обертка для ссылок меню футера*/
@@ -23,11 +27,11 @@
 .footer_link {
   text-decoration: none;
   color: white;
-  padding: 4px;
+  padding: 5px;
   border: 2px solid white;
   border-radius: 7px;
 }
 /*Ссылки меню футера после наведения курсора*/
 .footer_link:hover {
-  background: rgb(20, 119, 211);
+  background: rgb(93, 20, 211);
 }
