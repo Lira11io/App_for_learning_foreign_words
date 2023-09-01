@@ -1,0 +1,63 @@
+@import "./variables.scss";
+
+/*основной шрифт*/
+@mixin general {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+
+/*шрифт заголовка*/
+@mixin title {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+}
+
+/*шрифт на карточке*/
+@mixin card {
+  font-family: "Nunito", sans-serif;
+  font-size: 2.3rem;
+}
+
+@mixin headline {
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+  color: $color-lavender;
+  &:hover {
+    color: $color-darklavender;
+    transform: scale(120%);
+  }
+}
+
+/*большая кнопка*/
+@mixin button-lg {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: $color-darklavender;
+  color: $color-white;
+  height: 3rem;
+  width: 13rem;
+
+  &:hover {
+    color: $color-deeplavender;
+    transform: scale(120%);
+  }
+}
+
+/*маленькая кнопка*/
+@mixin button-sm {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: $color-darklavender;
+  color: $color-white;
+  height: 3rem;
+  width: 4rem;
+
+  &:hover {
+    color: $color-deeplavender;
+    transform: scale(120%);
+  }
+}

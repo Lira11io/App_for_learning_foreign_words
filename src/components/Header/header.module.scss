@@ -1,22 +1,28 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.scss";
+
 .header_menu {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   list-style: none;
   margin: 0;
-  background: rgb(191, 63, 250);
+  background: $color-lavender;
   padding: 1em;
+  @include general;
 }
 
+/*Ссылки меню хедера*/
 .header_link {
   text-decoration: none;
-  color: white;
+  color: $color-white;
   padding: 5px;
-  border: 2px solid white;
+  border: 2px solid $color-white;
   border-radius: 7px;
 }
 
 /*Ссылки меню хедера после наведения курсора*/
 .header_link:hover {
-  background: rgb(93, 20, 211);
+  background: $color-darklavender;
+  transform: scale(120%);
 }

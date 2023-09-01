@@ -1,0 +1,25 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.scss";
+
+.table {
+  background-color: $color-lightlavender;
+  margin-top: 6vh;
+  width: 80vw;
+  margin-left: 9vw;
+  margin-right: 9vw;
+  @include general;
+}
+
+.table_row {
+  display: grid;
+  grid-template-columns: repeat(3, 27%) 19%;
+  @include title;
+}
+
+.table_col {
+  display: grid;
+  align-items: center;
+  border: 1.5px solid $color-darkgray;
+  padding: 4%;
+  color: $color-black;
+}

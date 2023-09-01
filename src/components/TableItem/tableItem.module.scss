@@ -1,0 +1,46 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.scss";
+
+.tableitem_row {
+  display: grid;
+  grid-template-columns: repeat(3, 27%) 12% 7%;
+}
+
+.tableitem_col {
+  border: 1px solid $color-darkgray;
+  height: 2rem;
+  display: grid;
+  align-items: center;
+  color: $color-darkgraphite;
+}
+
+.tableitem_row_noDisplay {
+  display: none;
+}
+
+.tableitem_input {
+  @include general;
+  background-color: $color-beigegray;
+  border: 1px solid $color-darkgray;
+  color: $color-graphite;
+}
+.tableitem_input:focus {
+  outline: none;
+  background-color: $color-lavender;
+  color: $color-darkgraphite;
+  @include general;
+
+  ::placeholder {
+    color: $color-darklavender;
+  }
+}
+
+.tableitem_col_button {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button:hover {
+  color: $color-deeplavender;
+  transform: scale(120%);
+}
