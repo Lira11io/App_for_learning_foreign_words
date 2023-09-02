@@ -10,7 +10,7 @@
 
 .card {
   width: 35vw;
-  height: 85vh;
+  height: 75vh;
   border: 3px solid $color-darkgray;
   border-radius: 27px;
   background-color: $color-lightlavender;
@@ -31,9 +31,11 @@
 .card_translation {
   margin-top: 8vh;
   color: $color-darklavender;
+  @include translate;
 }
 
 .card_button {
+  margin-top: 8vh;
   display: flex;
   justify-content: center;
 }

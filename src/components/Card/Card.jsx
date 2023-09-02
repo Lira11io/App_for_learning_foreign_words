@@ -1,23 +1,49 @@
 import { useState } from "react";
-import vocabulary from "../Data/vocabulary.json";
 import style from "./card.module.scss";
-//import { useState } from "react";
 
-export default function Card(props) {
-  //const { english, transcription, russian} = props;
-  const [button, setButton] = useState(true); //задаем состояние для кнопки "Показать перевод"
+export default function Card({ vocabulary }) {
+  //задаем первоначальное состояние для кнопки, при котором перевод скрыт
+  const [showTranslation, setShowTranslation] = useState(false);
+  //добавляем состояние, которое означает, что перевод уже показан
+  const [translationShown, setTranslationShown] = useState(false);
+
+  //зададим функцию, вызываемую по клике на кнопку и передающую соответствующий перевод
+  const handleShowTranslation = () => {
+    if (!translationShown) {
+      setShowTranslation(true);
+      setTranslationShown(true);
+    } else {
+      setShowTranslation(false);
+      setTranslationShown(false);
+    }
+  };
 
   //возвращаю разметку карточки
   return (
     <>
       <div className={style.container}>
         <div className={style.card}>
-          <div className={style.card_word}>слово</div>
-          <div className={style.card_transcription}>транскрипция</div>
-          <div className={style.card_translation}>перевод</div>
-          <div className={style.card_button}>
-            <bottom className={style.card_btn}>Показать перевод</bottom>
+          <div className={style.card_word}>{vocabulary.english}</div>
+          <div className={style.card_transcription}>
+            {vocabulary.transcription}
           </div>
+          {showTranslation ? (
+            <div
+              className={style.card_translation}
+              onClick={handleShowTranslation}
+            >
+              {vocabulary.russian}
+            </div>
+          ) : (
+            <div className={style.card_button}>
+              <button
+                className={style.card_btn}
+                onClick={handleShowTranslation}
+              >
+                Показать перевод
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </>

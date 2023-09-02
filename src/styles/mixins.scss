@@ -12,10 +12,16 @@
   font-size: 1.2rem;
 }
 
-/*шрифт на карточке*/
+/*шрифт иностранного слова на карточке*/
 @mixin card {
   font-family: "Nunito", sans-serif;
   font-size: 3.3rem;
+}
+
+/*шрифт перевода слова на карточке*/
+@mixin translate {
+  font-family: "Nunito", sans-serif;
+  font-size: 2.3rem;
 }
 
 @mixin headline {
