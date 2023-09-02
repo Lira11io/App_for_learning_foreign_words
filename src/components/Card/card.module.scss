@@ -1,3 +1,46 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.scss";
+
 .container {
-  margin: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 35vw;
+  height: 85vh;
+  border: 3px solid $color-darkgray;
+  border-radius: 27px;
+  background-color: $color-lightlavender;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card_word {
+  @include card;
+  color: $color-black;
+}
+
+.card_transcription {
+  color: $color-darkgraphite;
+}
+
+.card_translation {
+  margin-top: 8vh;
+  color: $color-darklavender;
+}
+
+.card_button {
+  display: flex;
+  justify-content: center;
+}
+
+.card_btn {
+  @include button-lg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

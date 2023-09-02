@@ -15,7 +15,7 @@
 /*шрифт на карточке*/
 @mixin card {
   font-family: "Nunito", sans-serif;
-  font-size: 2.3rem;
+  font-size: 3.3rem;
 }
 
 @mixin headline {
@@ -31,7 +31,7 @@
 /*большая кнопка*/
 @mixin button-lg {
   font-family: "Nunito", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border: none;
   border-radius: 10px;
   background-color: $color-darklavender;
@@ -40,8 +40,9 @@
   width: 13rem;
 
   &:hover {
-    color: $color-deeplavender;
-    transform: scale(120%);
+    background-color: $color-deeplavender;
+    border: 2px solid $color-white;
+    transform: scale(110%);
   }
 }
 

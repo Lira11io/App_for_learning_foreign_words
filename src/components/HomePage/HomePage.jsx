@@ -6,10 +6,10 @@ import Table from "../Table/Table";
 function HomePage() {
   return (
     <div>
-      <Header></Header>
-      <Table></Table>
-      <Card></Card>
-      <Footer></Footer>
+      <Header />
+      <Table />
+      <Card />
+      <Footer />
     </div>
   );
 }
