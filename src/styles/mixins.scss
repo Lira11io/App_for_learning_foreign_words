@@ -64,7 +64,8 @@
   width: 4rem;
 
   &:hover {
-    color: $color-deeplavender;
+    background-color: $color-deeplavender;
+    border: 2px solid $color-darkgray;
     transform: scale(120%);
   }
 }

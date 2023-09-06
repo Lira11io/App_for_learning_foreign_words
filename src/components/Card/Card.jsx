@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./card.module.scss";
 
-export default function Card({ vocabulary }) {
+export default function Card(props) {
   //задаем первоначальное состояние для кнопки, при котором перевод скрыт
   const [showTranslation, setShowTranslation] = useState(false);
   //добавляем состояние, которое означает, что перевод уже показан
@@ -23,16 +23,14 @@ export default function Card({ vocabulary }) {
     <>
       <div className={style.container}>
         <div className={style.card}>
-          <div className={style.card_word}>{vocabulary.english}</div>
-          <div className={style.card_transcription}>
-            {vocabulary.transcription}
-          </div>
+          <div className={style.card_word}>{props.english}</div>
+          <div className={style.card_transcription}>{props.transcription}</div>
           {showTranslation ? (
             <div
               className={style.card_translation}
               onClick={handleShowTranslation}
             >
-              {vocabulary.russian}
+              {props.russian}
             </div>
           ) : (
             <div className={style.card_button}>
