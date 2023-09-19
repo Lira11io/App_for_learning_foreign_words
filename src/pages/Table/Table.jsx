@@ -1,5 +1,5 @@
-import TableItem from "../TableItem/TableItem";
-import vocabulary from "../Data/vocabulary.json";
+import TableItem from "../../components/TableItem/TableItem";
+import vocabulary from "../../components/Data/vocabulary.json";
 import style from "./table.module.scss";
 
 export default function Table() {

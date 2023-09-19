@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Card from "../Card/Card";
-import arr from "../Data/vocabulary.json";
+import Card from "../../components/Card/Card";
+import arr from "../../components/Data/vocabulary.json";
 import style from "./slider.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleLeft, faCircleRight } from "@fortawesome/free-solid-svg-icons";

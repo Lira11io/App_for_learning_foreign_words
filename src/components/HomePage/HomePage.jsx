@@ -1,16 +1,10 @@
-import Header from "../Header/Header";
-import Slider from "../Slider/Slider";
-import Footer from "../Footer/Footer";
-import Table from "../Table/Table";
+import style from "./homePage.module.scss";
+import transformed from "../../components/img/transformed.png";
 
 function HomePage() {
   return (
-    <div>
-      <Header />
-      <Table />
-      <Slider />
-
-      <Footer />
+    <div className={style.container}>
+      <img className={style.image} src={transformed} alt="логотип" />
     </div>
   );
 }
