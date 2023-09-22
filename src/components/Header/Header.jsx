@@ -7,9 +7,9 @@ export default function Header() {
         <a className={style.header_link} href="url">
           О нас
         </a>
-        <a className={style.header_link} href="url">
+        {/* <a className={style.header_link} href="url">
           Все слова
-        </a>
+        </a> */}
         <a className={style.header_link} href="url">
           Контакты
         </a>

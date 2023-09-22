@@ -8,7 +8,7 @@ import {
 import HomePage from "./components/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { Slider, Table } from "./pages";
+import { Slider, Table, Error } from "./pages";
 import "./styles/App.scss";
 
 function App() {
@@ -17,10 +17,16 @@ function App() {
       <Router>
         <div className="App">
           <Header />
+          <nav>
+            <NavLink to="/">Домашняя страница</NavLink>
+            <NavLink to="/table">Список слов</NavLink>
+            <NavLink to="/slider">Карточки слов</NavLink>
+          </nav>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/table" element={<Table />} />
             <Route path="/slider" element={<Slider />} />
+            <Route path="*" element={<Error />} />
           </Routes>
           <Footer />
         </div>

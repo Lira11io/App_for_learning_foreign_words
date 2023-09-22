@@ -3,4 +3,23 @@
 
 .container {
   width: 100%;
+  font-family: "Nunito", sans-serif;
+  color: $color-darklavender;
+}
+
+h1,
+h2 {
+  margin: 1.3vh auto;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.headline {
+  font-size: 1.6rem;
+}
+
+.slogan {
+  font-size: 1.7rem;
 }

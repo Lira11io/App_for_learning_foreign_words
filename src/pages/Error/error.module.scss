@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.scss";
+
+.container {
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+  background-color: $color-lavender;
+  color: $color-white;
+}
+
+.image {
+  margin-top: 3vh;
+}
+
+.error {
+  font-size: 4rem;
+}
+
+.text {
+  font-size: 3rem;
+  padding-bottom: 3vh;
+}
