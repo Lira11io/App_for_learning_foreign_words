@@ -5,12 +5,12 @@ export default function Footer() {
     <div className={style.footer}>
       <nav className={style.footer_menu}>
         <a className={style.footer_link} href="url">
-          Выученные
+          Избранное
         </a>
-        <a className={style.footer_link} href="url">
+        <a className={style.footer_link} href="/slider">
           Карточки слов
         </a>
-        <a className={style.footer_link} href="url">
+        <a className={style.footer_link} href="/table">
           Список слов
         </a>
       </nav>

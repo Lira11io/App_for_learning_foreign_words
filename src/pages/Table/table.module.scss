@@ -3,11 +3,11 @@
 
 .table {
   background-color: $color-lightlavender;
-  margin-top: 6vh;
+  margin: 4vh 9vw;
   width: 80vw;
-  margin-left: 9vw;
-  margin-right: 9vw;
+  height: 65vh;
   @include general;
+  overflow: auto;
 }
 
 .table_row {

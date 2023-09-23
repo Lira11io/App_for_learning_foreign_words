@@ -6,8 +6,8 @@ import {
   NavLink,
 } from "react-router-dom";
 import HomePage from "./components/HomePage/HomePage";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Header from "../src/components/Header/Header";
+import Footer from "../src/components/Footer/Footer";
 import { Slider, Table, Error } from "./pages";
 import "./styles/App.scss";
 
@@ -17,10 +17,16 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <nav>
-            <NavLink to="/">Домашняя страница</NavLink>
-            <NavLink to="/table">Список слов</NavLink>
-            <NavLink to="/slider">Карточки слов</NavLink>
+          <nav className="nav">
+            <NavLink className="nav-link" to="/">
+              Домашняя страница
+            </NavLink>
+            <NavLink className="nav-link" to="/table">
+              Список слов
+            </NavLink>
+            <NavLink className="nav-link" to="/slider">
+              Карточки слов
+            </NavLink>
           </nav>
           <Routes>
             <Route path="/" element={<HomePage />} />

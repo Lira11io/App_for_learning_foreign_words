@@ -54,24 +54,26 @@ export default function Slider() {
   }
 
   return (
-    <div className={style.slider}>
-      <button className={style.btn_prev} onClick={goToPreviousCard}>
-        <FontAwesomeIcon icon={faCircleLeft} />
-      </button>
+    <>
+      <div className={style.slider}>
+        <button className={style.btn_prev} onClick={goToPreviousCard}>
+          <FontAwesomeIcon icon={faCircleLeft} />
+        </button>
 
-      <Card
-        english={object.english}
-        transcription={object.transcription}
-        russian={object.russian}
-        index={object.index}
-        key={object.index}
-        showTranslation={showTranslation}
-        handleShowTranslation={handleShowTranslation}
-      />
+        <Card
+          english={object.english}
+          transcription={object.transcription}
+          russian={object.russian}
+          index={object.index}
+          key={object.index}
+          showTranslation={showTranslation}
+          handleShowTranslation={handleShowTranslation}
+        />
 
-      <button className={style.btn_next} onClick={goToNextCard}>
-        <FontAwesomeIcon icon={faCircleRight} />
-      </button>
-    </div>
+        <button className={style.btn_next} onClick={goToNextCard}>
+          <FontAwesomeIcon icon={faCircleRight} />
+        </button>
+      </div>
+    </>
   );
 }
