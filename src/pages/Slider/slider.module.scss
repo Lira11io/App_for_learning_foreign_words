@@ -11,3 +11,8 @@
 .btn_next {
   @include button-sm;
 }
+
+.count {
+  @include headline;
+  color: $color-darkgraphite;
+}

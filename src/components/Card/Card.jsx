@@ -1,6 +1,10 @@
+import { useRef, useEffect } from "react";
 import style from "./card.module.scss";
 
 export default function Card(props) {
+  const ref = useRef();
+  useEffect(() => ref.current.focus(), []);
+
   //возвращаю разметку карточки
   return (
     <>
@@ -20,6 +24,7 @@ export default function Card(props) {
               <button
                 className={style.card_btn}
                 onClick={props.handleShowTranslation}
+                ref={ref}
               >
                 Показать перевод
               </button>

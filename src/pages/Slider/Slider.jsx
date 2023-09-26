@@ -15,6 +15,9 @@ export default function Slider() {
   //создаем состояние для отслеживания состояния кнопки "Показать перевод"
   const [showTranslation, setShowTranslation] = useState(false);
 
+  //создаем состояние для отслеживания количества просмотренных слов
+  const [count, setCount] = useState(0);
+
   //делаем запрос к массиву 1 раз, когда создается компонент
   useEffect(() => {
     setWords(arr);
@@ -26,6 +29,7 @@ export default function Slider() {
   //создаем функцию, которая срабатывает на кнопке "Показать перевод"
   function handleShowTranslation() {
     setShowTranslation(!showTranslation);
+    setCount(count + 1);
   }
 
   //создаем функцию, которая увеличивает индекс на один и листает карточку вправо
@@ -74,6 +78,7 @@ export default function Slider() {
           <FontAwesomeIcon icon={faCircleRight} />
         </button>
       </div>
+      <div className={style.count}>Изучено слов: {count}</div>
     </>
   );
 }
