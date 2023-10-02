@@ -17,23 +17,25 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <nav className="nav">
-            <NavLink className="nav-link" to="/">
-              Домашняя страница
-            </NavLink>
-            <NavLink className="nav-link" to="/table">
-              Список слов
-            </NavLink>
-            <NavLink className="nav-link" to="/slider">
-              Карточки слов
-            </NavLink>
-          </nav>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/table" element={<Table />} />
-            <Route path="/slider" element={<Slider />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
+          <div className="content">
+            <nav className="nav">
+              <NavLink className="nav-link" to="/">
+                Домашняя страница
+              </NavLink>
+              <NavLink className="nav-link" to="/table">
+                Список слов
+              </NavLink>
+              <NavLink className="nav-link" to="/slider">
+                Карточки слов
+              </NavLink>
+            </nav>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/table" element={<Table />} />
+              <Route path="/slider" element={<Slider />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+          </div>
           <Footer />
         </div>
       </Router>

@@ -3,7 +3,16 @@ import style from "./card.module.scss";
 
 export default function Card(props) {
   const ref = useRef();
+
+  //установливаю фокус на кнопку при монтировании компонента
   useEffect(() => ref.current.focus(), []);
+
+  //установливаю фокус на кнопку каждый раз, когда меняется карточка (props.english)
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.focus();
+    }
+  }, [props.english]);
 
   //возвращаю разметку карточки
   return (
