@@ -19,12 +19,30 @@
   padding: 4px;
   border: 2px solid $color-white;
   border-radius: 7px;
-  max-width: 9vw;
-  width: 100%;
 }
 
 /*Ссылки меню хедера после наведения курсора*/
 .header_link:hover {
   background: $color-darklavender;
   transform: scale(120%);
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  /* CSS-стили Tablet*/
+  /*Оболочка футера*/
+  .header_menu {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  /* CSS-стили Smartphone*/
+  /*Оболочка футера*/
+  .header_menu {
+    font-size: 0.8rem;
+  }
+  /*Ссылки меню футера*/
+  .header_link {
+    padding: 3px;
+  }
 }

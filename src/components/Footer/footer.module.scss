@@ -25,8 +25,6 @@
   padding: 4px;
   border: 2px solid $color-white;
   border-radius: 7px;
-  max-width: 9vw;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,4 +33,24 @@
 .footer_link:hover {
   background: $color-darklavender;
   transform: scale(120%);
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  /* CSS-стили Tablet*/
+  /*Оболочка футера*/
+  .footer_menu {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  /* CSS-стили Smartphone*/
+  /*Оболочка футера*/
+  .footer_menu {
+    font-size: 0.8rem;
+  }
+  /*Ссылки меню футера*/
+  .footer_link {
+    padding: 3px;
+  }
 }
