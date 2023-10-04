@@ -12,6 +12,9 @@ export default function TableItem(props) {
   const [newTranscription, setNewTranscription] = useState(props.transcription);
   const [newRussian, setNewRussian] = useState(props.russian);
 
+  //создаем состояние для отслеживания ошибок в полях
+  const [errors, setErrors] = useState({});
+
   //создаем функцию для кнопки удаления, которая будет менять состояние на deleted - false
   function deleteWord() {
     setDeleted(!deleted);
@@ -26,10 +29,23 @@ export default function TableItem(props) {
 
   //создаем функцию для сохранения изменений
   function saveChanges() {
-    // Ваши действия с сохраненными значениями
-    console.log(newEnglish, newTranscription, newRussian);
-
+    //проверка на пустые поля
+    if (newEnglish === "" || newTranscription === "" || newRussian === "") {
+      setErrors({
+        english: newEnglish === "",
+        transcription: newTranscription === "",
+        russian: newRussian === "",
+      });
+      alert("Ошибка! Не все поля заполнены.");
+      return; // прекращаем выполнение функции в случае ошибки
+    }
     setEdit(!edit); //возвращаем первоначальный вид кнопки редактировать
+    console.log(
+      `В таблицу внесено изменение:`,
+      newEnglish,
+      newTranscription,
+      newRussian
+    );
   }
 
   return (
@@ -42,30 +58,51 @@ export default function TableItem(props) {
         <div className={style.tableitem_col}>{newEnglish}</div>
       ) : (
         <input
-          className={style.tableitem_input}
+          className={
+            errors.english
+              ? `${style.tableitem_input} ${style.input_error}`
+              : style.tableitem_input
+          }
           placeholder={props.english}
           value={newEnglish}
-          onChange={(e) => setNewEnglish(e.target.value)}
+          onChange={(e) => {
+            setNewEnglish(e.target.value);
+            setErrors({ ...errors, english: false }); //сбрасываем ошибку при изменении значения
+          }}
         ></input>
       )}
       {edit === true ? (
         <div className={style.tableitem_col}>{newTranscription}</div>
       ) : (
         <input
-          className={style.tableitem_input}
+          className={
+            errors.transcription
+              ? `${style.tableitem_input} ${style.input_error}`
+              : style.tableitem_input
+          }
           placeholder={props.transcription}
           value={newTranscription}
-          onChange={(e) => setNewTranscription(e.target.value)}
+          onChange={(e) => {
+            setNewTranscription(e.target.value);
+            setErrors({ ...errors, transcription: false }); //сбрасываем ошибку при изменении значения
+          }}
         ></input>
       )}
       {edit === true ? (
         <div className={style.tableitem_col}>{newRussian}</div>
       ) : (
         <input
-          className={style.tableitem_input}
+          className={
+            errors.russian
+              ? `${style.tableitem_input} ${style.input_error}`
+              : style.tableitem_input
+          }
           placeholder={props.russian}
           value={newRussian}
-          onChange={(e) => setNewRussian(e.target.value)}
+          onChange={(e) => {
+            setNewRussian(e.target.value);
+            setErrors({ ...errors, russian: false }); // сбрасываем ошибку при изменении значения
+          }}
         ></input>
       )}
       <div className={style.tableitem_col}>
