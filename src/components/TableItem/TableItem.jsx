@@ -15,6 +15,9 @@ export default function TableItem(props) {
   //создаем состояние для отслеживания ошибок в полях
   const [errors, setErrors] = useState({});
 
+  //создаем состояние отслеживания валидности
+  //const [isValid, setIsValid] = useState(true);
+
   //создаем функцию для кнопки удаления, которая будет менять состояние на deleted - false
   function deleteWord() {
     setDeleted(!deleted);
@@ -26,6 +29,18 @@ export default function TableItem(props) {
     setNewRussian(props.russian);
     setEdit(!edit);
   }
+
+  //создаем функцию для проверки введения кириллицы
+  /*  const russianCheck = (str) => {
+    const regex = /^[а-яё]+$/i; // Регулярное выражение для проверки на кириллицу и игнорирование регистра
+    setIsValid(regex.test(value));
+  };
+
+  //создаем функцию для проверки введения латиницы
+  const englishCheck = (str) => {
+    const regex = /^[а-яё]+$/i;
+    setIsValid(regex.test(value));
+  }; */
 
   //создаем функцию для сохранения изменений
   function saveChanges() {
