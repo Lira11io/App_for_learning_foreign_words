@@ -15,9 +15,6 @@ export default function TableItem(props) {
   //создаем состояние для отслеживания ошибок в полях
   const [errors, setErrors] = useState({});
 
-  //создаем состояние отслеживания валидности
-  //const [isValid, setIsValid] = useState(true);
-
   //создаем функцию для кнопки удаления, которая будет менять состояние на deleted - false
   function deleteWord() {
     setDeleted(!deleted);
@@ -30,18 +27,6 @@ export default function TableItem(props) {
     setEdit(!edit);
   }
 
-  //создаем функцию для проверки введения кириллицы
-  /*  const russianCheck = (str) => {
-    const regex = /^[а-яё]+$/i; // Регулярное выражение для проверки на кириллицу и игнорирование регистра
-    setIsValid(regex.test(value));
-  };
-
-  //создаем функцию для проверки введения латиницы
-  const englishCheck = (str) => {
-    const regex = /^[а-яё]+$/i;
-    setIsValid(regex.test(value));
-  }; */
-
   //создаем функцию для сохранения изменений
   function saveChanges() {
     //проверка на пустые поля
@@ -53,6 +38,25 @@ export default function TableItem(props) {
       });
       alert("Ошибка! Не все поля заполнены.");
       return; // прекращаем выполнение функции в случае ошибки
+    }
+
+    //проверка на ввод слов на латинице
+    if (!/^[a-zA-Z]+$/i.test(newEnglish)) {
+      setErrors({
+        ...errors,
+        latin: true,
+      });
+      alert("Ошибка! Вводите только слова на латинице.");
+      return;
+    }
+    //проверка на ввод слов на кириллице
+    if (!/^[а-яё]+$/i.test(newRussian)) {
+      setErrors({
+        ...errors,
+        cyrillic: true,
+      });
+      alert("Ошибка! Вводите только слова на кириллице.");
+      return;
     }
     setEdit(!edit); //возвращаем первоначальный вид кнопки редактировать
     console.log(
@@ -82,7 +86,7 @@ export default function TableItem(props) {
           value={newEnglish}
           onChange={(e) => {
             setNewEnglish(e.target.value);
-            setErrors({ ...errors, english: false }); //сбрасываем ошибку при изменении значения
+            setErrors({ ...errors, english: false, latin: false }); //сбрасываем ошибку при изменении значения
           }}
         ></input>
       )}
@@ -116,7 +120,7 @@ export default function TableItem(props) {
           value={newRussian}
           onChange={(e) => {
             setNewRussian(e.target.value);
-            setErrors({ ...errors, russian: false }); // сбрасываем ошибку при изменении значения
+            setErrors({ ...errors, russian: false, cyrillic: false }); // сбрасываем ошибку при изменении значения
           }}
         ></input>
       )}
