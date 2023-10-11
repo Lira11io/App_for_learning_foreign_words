@@ -4,13 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../fontawesome.js";
 
 export default function TableItem(props) {
+  //деструктурируем пропсы, доступные из компонента Slider
+  const { english, transcription, russian } = props;
+
   const [deleted, setDeleted] = useState(true); //задаем состояние для кнопки удаления
   const [edit, setEdit] = useState(true); //задаем состояние для кнопки редактирования
 
   //добавим новые состояния для значений в инпутах
-  const [newEnglish, setNewEnglish] = useState(props.english);
-  const [newTranscription, setNewTranscription] = useState(props.transcription);
-  const [newRussian, setNewRussian] = useState(props.russian);
+  const [newEnglish, setNewEnglish] = useState(english);
+  const [newTranscription, setNewTranscription] = useState(transcription);
+  const [newRussian, setNewRussian] = useState(russian);
 
   //создаем состояние для отслеживания ошибок в полях
   const [errors, setErrors] = useState({});
@@ -21,9 +24,9 @@ export default function TableItem(props) {
   }
   //создаем функцию для кнопки редактирования, которая будет менять состояние на edit - false и возвращает первоначальные значения
   function editWord() {
-    setNewEnglish(props.english);
-    setNewTranscription(props.transcription);
-    setNewRussian(props.russian);
+    setNewEnglish(english);
+    setNewTranscription(transcription);
+    setNewRussian(russian);
     setEdit(!edit);
   }
 
@@ -82,7 +85,7 @@ export default function TableItem(props) {
               ? `${style.tableitem_input} ${style.input_error}`
               : style.tableitem_input
           }
-          placeholder={props.english}
+          placeholder={english}
           value={newEnglish}
           onChange={(e) => {
             setNewEnglish(e.target.value);
@@ -99,7 +102,7 @@ export default function TableItem(props) {
               ? `${style.tableitem_input} ${style.input_error}`
               : style.tableitem_input
           }
-          placeholder={props.transcription}
+          placeholder={transcription}
           value={newTranscription}
           onChange={(e) => {
             setNewTranscription(e.target.value);
@@ -116,7 +119,7 @@ export default function TableItem(props) {
               ? `${style.tableitem_input} ${style.input_error}`
               : style.tableitem_input
           }
-          placeholder={props.russian}
+          placeholder={russian}
           value={newRussian}
           onChange={(e) => {
             setNewRussian(e.target.value);

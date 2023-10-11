@@ -2,6 +2,15 @@ import { useRef, useEffect } from "react";
 import style from "./card.module.scss";
 
 export default function Card(props) {
+  //деструктурируем пропсы, доступные из компонента Slider
+  const {
+    english,
+    transcription,
+    russian,
+    showTranslation,
+    handleShowTranslation,
+  } = props;
+
   const ref = useRef();
 
   //установливаю фокус на кнопку при монтировании компонента
@@ -12,27 +21,27 @@ export default function Card(props) {
     if (ref.current) {
       ref.current.focus();
     }
-  }, [props.english]);
+  }, [english]);
 
   //возвращаю разметку карточки
   return (
     <>
       <div className={style.container}>
         <div className={style.card}>
-          <div className={style.card_word}>{props.english}</div>
-          <div className={style.card_transcription}>{props.transcription}</div>
-          {props.showTranslation ? (
+          <div className={style.card_word}>{english}</div>
+          <div className={style.card_transcription}>{transcription}</div>
+          {showTranslation ? (
             <div
               className={style.card_translation}
-              onClick={props.handleShowTranslation}
+              onClick={handleShowTranslation}
             >
-              {props.russian}
+              {russian}
             </div>
           ) : (
             <div className={style.card_button}>
               <button
                 className={style.card_btn}
-                onClick={props.handleShowTranslation}
+                onClick={handleShowTranslation}
                 ref={ref}
               >
                 Показать перевод
