@@ -7,21 +7,25 @@
   color: $color-darklavender;
 }
 
+.image {
+  max-width: 100%;
+}
+
 h1,
 h2 {
-  margin: 1.2vh auto;
+  margin: 0.4vh auto;
 }
 
 .title {
-  font-size: 1.7rem;
+  font-size: 2.8vw;
 }
 
 .headline {
-  font-size: 1.2rem;
+  font-size: 1.96vw;
 }
 
 .slogan {
-  font-size: 1.4rem;
+  font-size: 2.29vw;
 }
 
 @media (min-width: 600px) and (max-width: 1023px) {
@@ -31,25 +35,25 @@ h2 {
   }
 
   .headline {
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 
   .slogan {
-    font-size: 1.2rem;
+    font-size: 1.19rem;
   }
 }
 
 @media screen and (max-width: 599px) {
   /* CSS-стили Smartphone*/
   .title {
-    font-size: 1.3rem;
+    font-size: 1.29rem;
   }
 
   .headline {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
   .slogan {
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 }

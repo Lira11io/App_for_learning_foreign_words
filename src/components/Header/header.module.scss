@@ -10,6 +10,8 @@
   background: $color-lavender;
   padding: 1.5vh;
   @include general;
+  height: auto;
+  width: 100%;
 }
 
 /*Ссылки меню хедера*/
