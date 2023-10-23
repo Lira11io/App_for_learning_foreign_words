@@ -8,13 +8,17 @@ import style from "./table.module.scss";
 export default function Table() {
   const { worlds, flag, setFlag } = useContext(MyContext);
   //состояние для хранения нового слова
-  const [newWord, setNewWord] = useState({english:"", transcription:"", russian:""};)
+  const [newWord, setNewWord] = useState({
+    english: "",
+    transcription: "",
+    russian: "",
+  });
 
-  const addWordToApi = async() => {
-    if (newWord.trim() === ''){
-      return
+  const addWordToApi = async () => {
+    if (newWord.trim() === "") {
+      return;
     }
-  }
+  };
 
   //возвращаем разметку таблицы
   //создаем функцию map для обращения к каждому объекту из массива и использованию их в компоненте TableItem
