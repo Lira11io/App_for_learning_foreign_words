@@ -1,11 +1,13 @@
 import { useState } from "react";
+import PUT from "../../services/PUT";
+import DEL from "../../services/DEL";
 import style from "./tableItem.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../fontawesome.js";
 
 export default function TableItem(props) {
   //деструктурируем пропсы, доступные из компонента Slider
-  const { english, transcription, russian } = props;
+  const { english, transcription, russian, id } = props;
 
   const [deleted, setDeleted] = useState(true); //задаем состояние для кнопки удаления
   const [edit, setEdit] = useState(true); //задаем состояние для кнопки редактирования

@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { MyContext } from "../../context/MyContext";
+import { useContext } from "react";
 import Card from "../../components/Card/Card";
-import arr from "../../components/Data/vocabulary.json";
 import style from "./slider.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleLeft, faCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Slider() {
-  //сохраняем массив данных
-  const [words, setWords] = useState([false]);
+  const { words } = useContext(MyContext);
 
   //создаем переменную для сохранения текущего индекса карточки и устанавливаем ему первоначальное значение
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
@@ -17,11 +17,6 @@ export default function Slider() {
 
   //создаем состояние для отслеживания количества просмотренных слов
   const [count, setCount] = useState(0);
-
-  //делаем запрос к массиву 1 раз, когда создается компонент
-  useEffect(() => {
-    setWords(arr);
-  }, []);
 
   //создаем переменную для объекта массива
   const object = words[currentCardIndex];
@@ -35,7 +30,7 @@ export default function Slider() {
   //создаем функцию, которая увеличивает индекс на один и листает карточку вправо
   const goToNextCard = () => {
     setCurrentCardIndex((prevIndex) =>
-      prevIndex === arr.length - 1 ? 0 : prevIndex + 1
+      prevIndex === words.length - 1 ? 0 : prevIndex + 1
     );
     //если текущая карточка последняя, перейти на первую карточку
     //увеличить индекс на 1
@@ -45,7 +40,7 @@ export default function Slider() {
   //создаем функцию, которая уменьшает индекс на один и листает карточку влево
   const goToPreviousCard = () => {
     setCurrentCardIndex((prevIndex) =>
-      prevIndex === 0 ? arr.length - 1 : prevIndex - 1
+      prevIndex === 0 ? words.length - 1 : prevIndex - 1
     );
     //если текущая карточка первая, перейти на последнюю карточку
     //уменьшить индекс на 1
@@ -54,7 +49,7 @@ export default function Slider() {
 
   if (!words) {
     // если массив не был передан, то высвечивается сообщение о загрузке
-    return <h1>loading</h1>;
+    return <h1>loading...</h1>;
   }
 
   return (
