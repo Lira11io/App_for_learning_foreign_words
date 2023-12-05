@@ -1,8 +1,8 @@
 # Приложение на React для изучения иностранных слов по карточкам
 
-## Application Description and Structure
+## Application Description and Structure (описание и структура приложения)
 
-This is an application called "Play/study", which contains the following pages:
+Это приложение называется "Play/study" и содержит следующие страницы:
 
 Домашняя страница/О нас (общая информация и описание приложения)
 Карточки слов (игра для изучения слов). Позволяет вам просматривать переводы слов и подсчитывает, сколько слов вы выучили за сеанс.
@@ -13,7 +13,7 @@ This is an application called "Play/study", which contains the following pages:
 
 This project was bootstrapped with Create React App.
 
-## Available Scripts
+## Available Scripts (доступные сценарии)
 
 In the project directory, you can run:
 
